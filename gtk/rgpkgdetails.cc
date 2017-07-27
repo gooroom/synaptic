@@ -69,7 +69,19 @@ RGPkgDetailsWindow::RGPkgDetailsWindow(RGWindow *parent)
    label = GTK_WIDGET(gtk_builder_get_object(_builder, "label_maintainer"));
    g_signal_connect(G_OBJECT(label), "activate-link", 
                     G_CALLBACK(cbOpenLink), NULL);
+
+   if ( !pss->getIsOpenDB() )
+   {
+      GtkWidget *notebook = GTK_WIDGET (gtk_builder_get_object (_builder, "notebook_info"));
+      GtkWidget *page = gtk_notebook_get_nth_page(GTK_NOTEBOOK(notebook), 5);
+      gtk_widget_hide(page);
+   } else {
+      pssFlag = true;
+   }
 }
+
+RGooroomPss *RGPkgDetailsWindow::pss = RGooroomPss::getInstance();
+bool RGPkgDetailsWindow::pssFlag = false;
 
 void RGPkgDetailsWindow::cbCloseClicked(GtkWidget *self, void *data)
 {
@@ -397,6 +409,10 @@ void RGPkgDetailsWindow::fillInValues(RGGtkBuilderWindow *me,
                     "changed",
                     G_CALLBACK(cbDependsMenuChanged), me);
    */
+   if ( pssFlag )
+   {
+      me->setAnalysisTreeList("treeview_pss", pss->getAllInfo(pkg->name()));
+   }
 }
 
 void RGPkgDetailsWindow::cbDependsMenuChanged(GtkWidget *self, void *data)

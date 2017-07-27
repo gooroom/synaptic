@@ -49,6 +49,8 @@ libsynaptic_a_SOURCES =\
 	ruserdialog.h \
 	ruserdialog.cc \
 	sections_trans.h \
-	sections_trans.cc 
+	sections_trans.cc \
+	rgooroompss.h \
+	rgooroompss.cc 
 
 

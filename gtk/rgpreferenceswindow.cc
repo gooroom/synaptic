@@ -45,15 +45,15 @@ enum { FONT_DEFAULT, FONT_TERMINAL };
 
 const char * RGPreferencesWindow::column_names[] = 
    {"status", "supported", "name", "section", "component", "instVer", 
-    "availVer", "instSize", "downloadSize", "descr", NULL };
+    "availVer", "instSize", "downloadSize", "descr", "cveScore", NULL };
 
 const char *RGPreferencesWindow::column_visible_names[] = 
    {_("Status"), _("Supported"), _("Package Name"), _("Section"),
     _("Component"), _("Installed Version"), _("Latest Version"), 
-    _("Size"), _("Download Size"),_("Description"), NULL };
+    _("Size"), _("Download Size"),_("Description"), _("CVE Score"), NULL };
 
 const gboolean RGPreferencesWindow::column_visible_defaults[] = 
-   { TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, TRUE, FALSE, TRUE }; 
+   { TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, TRUE, FALSE, TRUE, FALSE }; 
 
 const char *RGPreferencesWindow::removal_actions[] =
    { N_("Keep Configuration"), N_("Completely"), NULL };

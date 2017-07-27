@@ -92,6 +92,7 @@ RPackage::RPackage(RPackageLister *lister, pkgDepCache *depcache,
       _defaultCandVer = State.CandVersion;
 }
 
+RGooroomPss *RPackage::pss = RGooroomPss::getInstance();
 
 RPackage::~RPackage()
 {
@@ -314,6 +315,16 @@ long RPackage::installedSize()
       return ver->InstalledSize;
    else
       return -1;
+}
+
+string RPackage::cveScore()
+{
+   string score = pss->getScore(_package->Name());
+   if ( score == "" )
+   {
+      score = "0";
+   }
+   return score;
 }
 
 long RPackage::availableInstalledSize()

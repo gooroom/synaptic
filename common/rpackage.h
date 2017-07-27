@@ -36,6 +36,7 @@
 #include <apt-pkg/pkgcache.h>
 #include <apt-pkg/acquire.h>
 #include "rconfiguration.h"
+#include "rgooroompss.h"
 #include "i18n.h"
 
 using namespace std;
@@ -82,6 +83,7 @@ typedef struct  {
 
 class RPackage {
 
+   static RGooroomPss *pss;
  public:
    RPackageLister *_lister;
 
@@ -199,6 +201,9 @@ class RPackage {
 
    // sourcepkg
    const char *srcPackage();
+
+  // pss score
+  string cveScore();
 
    // relative to version that would be installed
    const char *availableVersion();

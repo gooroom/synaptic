@@ -199,6 +199,47 @@ bool RGGtkBuilderWindow::setTreeList(const char *widget_name, vector<string> val
 }
 
 
+bool RGGtkBuilderWindow::setAnalysisTreeList(const char *widget_name, vector<string> values)
+{
+   GtkWidget *widget = GTK_WIDGET (gtk_builder_get_object (_builder, widget_name));
+   if (widget == NULL) {
+      cout << "widget == NULL with: " << widget_name << endl;
+      return false;
+   }
+   if(gtk_tree_view_get_column(GTK_TREE_VIEW(widget), 0) == NULL) {
+      // cell renderer
+      GtkTreeViewColumn *column;
+      GtkCellRenderer *renderer;
+      renderer = gtk_cell_renderer_text_new();
+      column = gtk_tree_view_column_new_with_attributes(_("Name"),
+                     renderer,
+                     "text", TREE_NAME_COLUMN,
+                     NULL);
+      gtk_tree_view_append_column(GTK_TREE_VIEW(widget), column);
+
+      renderer = gtk_cell_renderer_text_new();
+      column = gtk_tree_view_column_new_with_attributes(_("Value"),
+                     renderer,
+                     "text", TREE_VALUE_COLUMN,
+                     NULL);
+      gtk_tree_view_append_column(GTK_TREE_VIEW(widget), column);
+   }
+
+   GtkListStore *store = gtk_list_store_new(2, G_TYPE_STRING, G_TYPE_STRING);
+   GtkTreeIter iter;
+   for(unsigned int i=0;i<values.size()/2;i++) {
+      string name = values[2*i];
+      string value = values[2*i+1];
+      gtk_list_store_append(store, &iter);
+      gtk_list_store_set(store, &iter,
+               TREE_NAME_COLUMN, utf8(name.c_str()),
+               TREE_VALUE_COLUMN, utf8(value.c_str()),
+               -1);
+   }
+   gtk_tree_view_set_model(GTK_TREE_VIEW(widget), GTK_TREE_MODEL(store));
+}
+
+
 bool RGGtkBuilderWindow::setTextView(const char *widget_name, 
 				     const char* value, 
 				     bool use_headline)

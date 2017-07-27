@@ -25,11 +25,14 @@
 #define _RGPKGDETAILS_H
 
 #include <gtk/gtk.h>
+#include "rgooroompss.h"
 #include "rpackage.h"
 #include "rggtkbuilderwindow.h"
 
 class RGPkgDetailsWindow : public RGGtkBuilderWindow {
    
+   static RGooroomPss *pss;
+   static bool pssFlag;
  protected:
    // used for the screenshot parameter passing
    struct screenshot_info {

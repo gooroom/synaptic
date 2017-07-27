@@ -237,8 +237,9 @@ static void gtk_pkg_list_init(GtkPkgList *pkg_list)
    pkg_list->column_headers[7] = G_TYPE_STRING;
    pkg_list->column_headers[8] = G_TYPE_STRING;
    pkg_list->column_headers[9] = G_TYPE_STRING;
-   pkg_list->column_headers[10] = GDK_TYPE_RGBA;
-   pkg_list->column_headers[11] = G_TYPE_POINTER;
+   pkg_list->column_headers[10] = G_TYPE_STRING;
+   pkg_list->column_headers[11] = GDK_TYPE_RGBA;
+   pkg_list->column_headers[12] = G_TYPE_POINTER;
 }
 
 /**
@@ -444,6 +445,10 @@ gtk_pkg_list_get_value(GtkTreeModel *tree_model,
          break;
       case PKG_COLUMN:
          g_value_set_pointer(value, pkg);
+         break;
+      case CVE_SCORE_COLUMN:
+         str = pkg->cveScore().c_str();
+         g_value_set_string(value, str);
          break;
       case COLOR_COLUMN:
        {
