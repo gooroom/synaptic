@@ -16,15 +16,16 @@ RGooroomPss::RGooroomPss()
    configPath = "/etc/gooroom/pss/";
    configName = "pss.conf";
    dbPath = "";
+   dbName = "";
 
    if ( isFileExists(configPath + configName) )
    {
       INIReader reader(configPath + configName);
-      dbPath = reader.Get("database", "name", "UNKNOWN");
+      dbName = reader.Get("database", "name", "UNKNOWN");
 
-      if ( isFileExists(dbPath) && dbPath.compare("UNKNOWN") != 0 )
+      if ( isFileExists(configPath + dbName) && dbName.compare("UNKNOWN") != 0 )
       {
-         dbPath = configPath + config["name"];
+         dbPath = configPath + dbName;
          if ( !isOpenDB && dbPath != "")
             isOpenDB = connectDatabase();
 

@@ -24,6 +24,7 @@ class RGooroomPss {
    string configPath;
    string configName;
    string dbPath;
+   string dbName;
 
    StrToStrMap score;
    StrToStrMap config;
