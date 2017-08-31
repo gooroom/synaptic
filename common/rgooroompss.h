@@ -28,8 +28,7 @@ class RGooroomPss {
    StrToStrMap score;
    StrToStrMap config;
 
-   bool isConfigExists();
-   void configParser(string section);
+   bool isFileExists(string path);
 
    bool connectDatabase();
    void disconnectDatabase();

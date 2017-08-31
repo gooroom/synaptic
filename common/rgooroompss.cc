@@ -1,8 +1,10 @@
 #include "rgooroompss.h"
 
 #include <iostream>
+#include <sstream>
 #include <fstream>
 #include <sys/stat.h>
+#include "INIReader.h"
 
 using namespace std;
 
@@ -15,17 +17,21 @@ RGooroomPss::RGooroomPss()
    configName = "pss.conf";
    dbPath = "";
 
-   score = {};
-   config = {};
+   if ( isFileExists(configPath + configName) )
+   {
+      INIReader reader(configPath + configName);
+      dbPath = reader.Get("database", "name", "UNKNOWN");
 
-   if ( isConfigExists() )
-      configParser("database");
-      dbPath = configPath + config["name"];
-      if ( !isOpenDB && dbPath != "")
-         isOpenDB = connectDatabase();
+      if ( isFileExists(dbPath) && dbPath.compare("UNKNOWN") != 0 )
+      {
+         dbPath = configPath + config["name"];
+         if ( !isOpenDB && dbPath != "")
+            isOpenDB = connectDatabase();
 
-      if ( isOpenDB )
-         setScore();
+         if ( isOpenDB )
+            setScore();
+      }
+   }
 }
 
 RGooroomPss::~RGooroomPss() {}
@@ -40,11 +46,11 @@ RGooroomPss *RGooroomPss::getInstance()
    return instance;
 }
 
-bool RGooroomPss::isConfigExists()
+bool RGooroomPss::isFileExists(string path)
 {
    struct stat buffer;
 
-   return (stat((configPath+configName).c_str(), &buffer) == 0);
+   return (stat((path).c_str(), &buffer) == 0);
 }
 
 bool RGooroomPss::connectDatabase()
@@ -63,53 +69,6 @@ void RGooroomPss::disconnectDatabase()
       sqlite3_close(dbFile);
       isOpenDB = false;
    }
-}
-
-void RGooroomPss::configParser(string section)
-{
-    ifstream configFile (configPath + configName);
-    string line, key, value;
-    string token = " =";
-    if (configFile.is_open())
-    {
-        while (getline (configFile, line))
-        {
-            unsigned long len = line.length();
-            if (line.at(0) == '[' && line.at(len-1) == ']')
-            {
-                if (line.substr(1, line.length()-2).compare(section) == 0)
-                {
-                    while (getline (configFile, line))
-                    {
-                        len = line.length();
-                        if (line.at(0) == '[' && line.at(len-1) == ']')
-                            break;
-
-                        int nCutPos;
-                        int nIndex = 0;
-                        string *strResult = new string[5];
-                        while ((nCutPos = line.find_first_of(token)) != line.npos)
-                        {
-                            if (nCutPos > 0)
-                            {
-                                strResult[nIndex++] = line.substr(0, nCutPos);
-                            }
-                            line = line.substr(nCutPos+1);
-                        }
-
-                        if(line.length() > 0)
-                        {
-                            strResult[nIndex++] = line.substr(0, nCutPos);
-                        }
-                        key = strResult[0];
-                        value = strResult[1];
-                        config.insert(StrToStrMap::value_type(key, value));
-                    }
-                }
-            }
-        }
-        configFile.close();
-    }
 }
 
 void RGooroomPss::setScore()
