@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-11 10:17+0100\n"
+"POT-Creation-Date: 2017-08-31 17:17+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -128,208 +128,218 @@ msgstr ""
 msgid "Java Programming Language"
 msgstr ""
 
-#. TRANSLATORS: Alias for the Debian package section "KDE"
+#. TRANSLATORS: Alias for the Debian package section "javascript"
 #: ../common/sections_trans.cc:56
+msgid "JavaScript Programming Language"
+msgstr ""
+
+#. TRANSLATORS: Alias for the Debian package section "KDE"
+#: ../common/sections_trans.cc:58
 msgid "KDE Desktop Environment"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "kernel"
-#: ../common/sections_trans.cc:58
+#: ../common/sections_trans.cc:60
 msgid "Kernel and modules"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "libdevel"
-#: ../common/sections_trans.cc:60
+#: ../common/sections_trans.cc:62
 msgid "Libraries - Development"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "libs"
-#: ../common/sections_trans.cc:62
+#: ../common/sections_trans.cc:64
 msgid "Libraries"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "lisp"
-#: ../common/sections_trans.cc:64
+#: ../common/sections_trans.cc:66
 msgid "Lisp Programming Language"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "localization"
-#: ../common/sections_trans.cc:66
+#: ../common/sections_trans.cc:68
 msgid "Localization"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "mail"
-#: ../common/sections_trans.cc:68
+#: ../common/sections_trans.cc:70
 msgid "Email"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "math"
-#: ../common/sections_trans.cc:70
+#: ../common/sections_trans.cc:72
 msgid "Mathematics"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "misc"
-#: ../common/sections_trans.cc:72
+#: ../common/sections_trans.cc:74
 msgid "Miscellaneous - Text Based"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "net"
-#: ../common/sections_trans.cc:74
+#: ../common/sections_trans.cc:76
 msgid "Networking"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "news"
-#: ../common/sections_trans.cc:76
+#: ../common/sections_trans.cc:78
 msgid "Newsgroup"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "ocaml"
-#: ../common/sections_trans.cc:78
+#: ../common/sections_trans.cc:80
 msgid "OCaml Programming Language"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "oldlibs"
-#: ../common/sections_trans.cc:80
+#: ../common/sections_trans.cc:82
 msgid "Libraries - Old"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "otherosfs"
-#: ../common/sections_trans.cc:82
+#: ../common/sections_trans.cc:84
 msgid "Cross Platform"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "perl"
-#: ../common/sections_trans.cc:84
+#: ../common/sections_trans.cc:86
 msgid "Perl Programming Language"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "php"
-#: ../common/sections_trans.cc:86
+#: ../common/sections_trans.cc:88
 msgid "PHP Programming Language"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "python"
-#: ../common/sections_trans.cc:88
+#: ../common/sections_trans.cc:90
 msgid "Python Programming Language"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "ruby"
-#: ../common/sections_trans.cc:90
+#: ../common/sections_trans.cc:92
 msgid "Ruby Programming Language"
 msgstr ""
 
+#. TRANSLATORS: Alias for the Debian package section "rust"
+#: ../common/sections_trans.cc:94
+msgid "Rust Programming Language"
+msgstr ""
+
 #. TRANSLATORS: Alias for the Debian package section "science"
-#: ../common/sections_trans.cc:92
+#: ../common/sections_trans.cc:96
 msgid "Science"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "shells"
-#: ../common/sections_trans.cc:94
+#: ../common/sections_trans.cc:98
 msgid "Shells"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "sound"
-#: ../common/sections_trans.cc:96
+#: ../common/sections_trans.cc:100
 msgid "Multimedia"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "task"
-#: ../common/sections_trans.cc:98 ../common/rpackageview.cc:507
+#: ../common/sections_trans.cc:102 ../common/rpackageview.cc:507
 msgid "Tasks"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "tex"
-#: ../common/sections_trans.cc:100
+#: ../common/sections_trans.cc:104
 msgid "TeX Authoring"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "text"
-#: ../common/sections_trans.cc:102
+#: ../common/sections_trans.cc:106
 msgid "Word Processing"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "utils"
-#: ../common/sections_trans.cc:104
+#: ../common/sections_trans.cc:108
 msgid "Utilities"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "vcs"
-#: ../common/sections_trans.cc:106
+#: ../common/sections_trans.cc:110
 msgid "Version Control Systems"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "video"
-#: ../common/sections_trans.cc:108
+#: ../common/sections_trans.cc:112
 msgid "Video software"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "web"
-#: ../common/sections_trans.cc:110
+#: ../common/sections_trans.cc:114
 msgid "World Wide Web"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "x11"
-#: ../common/sections_trans.cc:112
+#: ../common/sections_trans.cc:116
 msgid "Miscellaneous  - Graphical"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "xfce"
-#: ../common/sections_trans.cc:114
+#: ../common/sections_trans.cc:118
 msgid "Xfce Desktop Environment"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "zope"
-#: ../common/sections_trans.cc:116
+#: ../common/sections_trans.cc:120
 msgid "Zope/Plone Environment"
 msgstr ""
 
 #. TRANSLATORS: The section of the package is not known
-#: ../common/sections_trans.cc:118 ../common/rpackage.cc:115
+#: ../common/sections_trans.cc:122 ../common/rpackage.cc:116
 #: ../common/rpackageview.cc:610
 msgid "Unknown"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "alien"
-#: ../common/sections_trans.cc:120
+#: ../common/sections_trans.cc:124
 msgid "Converted From RPM by Alien"
 msgstr ""
 
 #. TRANSLATORS: Ubuntu translations section
-#: ../common/sections_trans.cc:122
+#: ../common/sections_trans.cc:126
 msgid "Internationalization and localization"
 msgstr ""
 
 #. TRANSLATORS: metapackages section
-#: ../common/sections_trans.cc:124
+#: ../common/sections_trans.cc:128
 msgid "Meta Packages"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "education"
-#: ../common/sections_trans.cc:126
+#: ../common/sections_trans.cc:130
 msgid "Education"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "introspection"
-#: ../common/sections_trans.cc:128
+#: ../common/sections_trans.cc:132
 msgid "GObject Introspection data"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "non-US"
 #. Export to the outside of the USA is not allowed
 #. or restricted
-#: ../common/sections_trans.cc:133 ../common/sections_trans.cc:151
-#: ../common/sections_trans.cc:155
+#: ../common/sections_trans.cc:137 ../common/sections_trans.cc:155
+#: ../common/sections_trans.cc:159
 msgid "Restricted On Export"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "non free"
-#: ../common/sections_trans.cc:135 ../common/sections_trans.cc:152
+#: ../common/sections_trans.cc:139 ../common/sections_trans.cc:156
 msgid "non free"
 msgstr ""
 
 #. TRANSLATORS: Alias for the Debian package section "contrib"
 #. Free software that depends on non-free software
-#: ../common/sections_trans.cc:138 ../common/sections_trans.cc:156
+#: ../common/sections_trans.cc:142 ../common/sections_trans.cc:160
 msgid "contrib"
 msgstr ""
 
@@ -472,36 +482,36 @@ msgstr ""
 msgid "Unable to read %s"
 msgstr ""
 
-#: ../common/rconfiguration.cc:119 ../common/rconfiguration.cc:286
+#: ../common/rconfiguration.cc:116 ../common/rconfiguration.cc:283
 #, c-format
 msgid "ERROR: couldn't open %s for writing"
 msgstr ""
 
-#: ../common/rconfiguration.cc:145
+#: ../common/rconfiguration.cc:142
 msgid "ERROR: Could not get password entry for superuser"
 msgstr ""
 
-#: ../common/rconfiguration.cc:154
+#: ../common/rconfiguration.cc:151
 #, c-format
 msgid "ERROR: could not create configuration directory %s"
 msgstr ""
 
-#: ../common/rconfiguration.cc:178
+#: ../common/rconfiguration.cc:175
 #, c-format
 msgid "ERROR: could not create state directory %s"
 msgstr ""
 
-#: ../common/rconfiguration.cc:195
+#: ../common/rconfiguration.cc:192
 #, c-format
 msgid "ERROR: could not create tmp directory %s"
 msgstr ""
 
-#: ../common/rconfiguration.cc:213
+#: ../common/rconfiguration.cc:210
 #, c-format
 msgid "ERROR: could not create log directory %s"
 msgstr ""
 
-#: ../common/rconfiguration.cc:311
+#: ../common/rconfiguration.cc:308
 #, c-format
 msgid "couldn't open %s for writing"
 msgstr ""
@@ -526,15 +536,15 @@ msgid ""
 "installation with the next medium close this window."
 msgstr ""
 
-#: ../common/rpackage.cc:243
+#: ../common/rpackage.cc:244
 msgid "The list of installed files is only available for installed packages"
 msgstr ""
 
-#: ../common/rpackage.cc:517
+#: ../common/rpackage.cc:528
 msgid "or dependency"
 msgstr ""
 
-#: ../common/rpackage.cc:634
+#: ../common/rpackage.cc:645
 #, c-format
 msgid ""
 "\n"
@@ -546,99 +556,99 @@ msgstr ""
 
 #. TRANSLATORS: dependency error message, example:
 #. "apt 0.5.4 but 0.5.3 is to be installed"
-#: ../common/rpackage.cc:671
+#: ../common/rpackage.cc:682
 #, c-format
 msgid "\t%s %s but %s is to be installed"
 msgstr ""
 
 #. TRANSLATORS: dependency error message, example:
 #. "Depends: apt 0.5.4 but 0.5.3 is to be installed"
-#: ../common/rpackage.cc:677
+#: ../common/rpackage.cc:688
 #, c-format
 msgid " %s: %s %s but %s is to be installed"
 msgstr ""
 
 #. TRANSLATORS: dependency error message, example:
 #. "apt 0.5.4 but it is not installable"
-#: ../common/rpackage.cc:687
+#: ../common/rpackage.cc:698
 #, c-format
 msgid "\t%s %s but it is not installable"
 msgstr ""
 
 #. TRANSLATORS: dependency error message, example:
 #. "apt but it is a virtual package"
-#: ../common/rpackage.cc:699
+#: ../common/rpackage.cc:710
 #, c-format
 msgid "\t%s but it is a virtual package"
 msgstr ""
 
 #. TRANSLATORS: dependency error message, example:
 #. "Depends: apt but it is a virtual package"
-#: ../common/rpackage.cc:704
+#: ../common/rpackage.cc:715
 #, c-format
 msgid "%s: %s but it is a virtual package"
 msgstr ""
 
 #. TRANSLATORS: dependency error message, example:
 #. "apt but it is not going to be installed"
-#: ../common/rpackage.cc:709
+#: ../common/rpackage.cc:720
 #, c-format
 msgid "\t%s but it is not going to be installed"
 msgstr ""
 
 #. TRANSLATORS: dependency error message, example:
 #. "Depends: apt but it is not going to be installed"
-#: ../common/rpackage.cc:714
+#: ../common/rpackage.cc:725
 #, c-format
 msgid "%s: %s but it is not going to be installed"
 msgstr ""
 
-#: ../common/rpackage.cc:733
+#: ../common/rpackage.cc:744
 msgid " or"
 msgstr ""
 
-#: ../common/rpackage.cc:1123
+#: ../common/rpackage.cc:1134
 msgid "Invalid record in the preferences file, no Package header"
 msgstr ""
 
-#: ../common/rpackage.h:53 ../common/rpackagefilter.cc:49
+#: ../common/rpackage.h:54 ../common/rpackagefilter.cc:49
 msgid "Depends"
 msgstr ""
 
-#: ../common/rpackage.h:54
+#: ../common/rpackage.h:55
 msgid "PreDepends"
 msgstr ""
 
-#: ../common/rpackage.h:55 ../common/rpackagefilter.cc:54
+#: ../common/rpackage.h:56 ../common/rpackagefilter.cc:54
 msgid "Suggests"
 msgstr ""
 
-#: ../common/rpackage.h:56 ../common/rpackagefilter.cc:53
+#: ../common/rpackage.h:57 ../common/rpackagefilter.cc:53
 msgid "Recommends"
 msgstr ""
 
-#: ../common/rpackage.h:57 ../common/rpackagefilter.cc:51
+#: ../common/rpackage.h:58 ../common/rpackagefilter.cc:51
 msgid "Conflicts"
 msgstr ""
 
-#: ../common/rpackage.h:58 ../common/rpackagefilter.cc:52
+#: ../common/rpackage.h:59 ../common/rpackagefilter.cc:52
 msgid "Replaces"
 msgstr ""
 
-#: ../common/rpackage.h:59
+#: ../common/rpackage.h:60
 msgid "Obsoletes"
 msgstr ""
 
-#: ../common/rpackage.h:60
+#: ../common/rpackage.h:61
 msgid "Breaks"
 msgstr ""
 
-#: ../common/rpackage.h:61
+#: ../common/rpackage.h:62
 msgid "Enhances"
 msgstr ""
 
 #. make sure this is always the last member
-#: ../common/rpackage.h:69
+#: ../common/rpackage.h:70
 msgid "Dependency of"
 msgstr ""
 
@@ -713,7 +723,7 @@ msgid "Internal Error, non-zero counts"
 msgstr ""
 
 #: ../common/rpackagefilter.cc:45 ../gtk/rgfindwindow.h:32
-#: ../gtk/rgpreferenceswindow.cc:1163
+#: ../gtk/rgpreferenceswindow.cc:1163 ../gtk/rggtkbuilderwindow.cc:214
 msgid "Name"
 msgstr ""
 
@@ -1340,6 +1350,10 @@ msgstr ""
 msgid "Download Size"
 msgstr ""
 
+#: ../gtk/rgpreferenceswindow.cc:53 ../gtk/rgpkgtreeview.cc:246
+msgid "CVE Score"
+msgstr ""
+
 #: ../gtk/rgpreferenceswindow.cc:59
 msgid "Keep Configuration"
 msgstr ""
@@ -1369,7 +1383,7 @@ msgid "Smart Upgrade"
 msgstr ""
 
 #: ../gtk/rgpreferenceswindow.cc:404 ../gtk/rgmainwindow.cc:1733
-#: ../gtk/rgterminstallprogress.cc:159
+#: ../gtk/rgterminstallprogress.cc:163
 msgid "An error occurred while saving configurations."
 msgstr ""
 
@@ -1500,16 +1514,16 @@ msgid ""
 "%s"
 msgstr ""
 
-#: ../gtk/rglogview.cc:281
+#: ../gtk/rglogview.cc:282
 msgid "Not found"
 msgstr ""
 
-#: ../gtk/rglogview.cc:283
+#: ../gtk/rglogview.cc:284
 msgid ""
 "Expression was found, please see the list on the left for matching entries."
 msgstr ""
 
-#: ../gtk/rgpkgdetails.cc:144 ../gtk/gtkbuilder/window_about.ui.h:3
+#: ../gtk/rgpkgdetails.cc:157 ../gtk/gtkbuilder/window_about.ui.h:3
 #: ../gtk/gtkbuilder/window_setopt.ui.h:1
 #: ../gtk/gtkbuilder/window_rgdebinstall_progress.ui.h:5
 #: ../gtk/gtkbuilder/window_rginstall_progress_msgs.ui.h:3
@@ -1526,32 +1540,37 @@ msgstr ""
 msgid "_Close"
 msgstr ""
 
-#: ../gtk/rgpkgdetails.cc:220
+#: ../gtk/rgpkgdetails.cc:233
 #, c-format
 msgid "%s Properties"
 msgstr ""
 
-#: ../gtk/rgpkgdetails.cc:297
+#: ../gtk/rgpkgdetails.cc:310
 msgid "This application is supported by the distribution"
 msgstr ""
 
-#: ../gtk/rgpkgdetails.cc:307
+#: ../gtk/rgpkgdetails.cc:320
 msgid "Get Screenshot"
 msgstr ""
 
-#: ../gtk/rgpkgdetails.cc:321
+#: ../gtk/rgpkgdetails.cc:334
 msgid "Get Changelog"
 msgstr ""
 
-#: ../gtk/rgpkgdetails.cc:333
+#: ../gtk/rgpkgdetails.cc:346
 msgid "Visit Homepage"
+msgstr ""
+
+#: ../gtk/rgpkgdetails.cc:347
+#, c-format
+msgid "Visit %s"
 msgstr ""
 
 #. TRANSLATORS: this the format of the available versions in
 #. the "Properties/Available versions" window
 #. e.g. "0.56 (unstable)"
 #. "0.53.4 (testing)"
-#: ../gtk/rgpkgdetails.cc:386
+#: ../gtk/rgpkgdetails.cc:399
 #, c-format
 msgid "%s (%s)"
 msgstr ""
@@ -2131,8 +2150,12 @@ msgstr ""
 #. happens when e.g. a package has no installed version (or no
 #. downloadable version)
 #: ../gtk/rggtkbuilderwindow.cc:120 ../gtk/rggtkbuilderwindow.cc:136
-#: ../gtk/rggtkbuilderwindow.cc:154 ../gtk/rggtkbuilderwindow.cc:217
+#: ../gtk/rggtkbuilderwindow.cc:154 ../gtk/rggtkbuilderwindow.cc:258
 msgid "N/A"
+msgstr ""
+
+#: ../gtk/rggtkbuilderwindow.cc:221
+msgid "Value"
 msgstr ""
 
 #: ../gtk/rgfindwindow.cc:146
@@ -2487,6 +2510,16 @@ msgstr ""
 #: ../gtk/gtkbuilder/window_main.ui.h:84
 #: ../gtk/gtkbuilder/window_details.ui.h:20
 msgid "Versions"
+msgstr ""
+
+#: ../gtk/gtkbuilder/window_main.ui.h:85
+#: ../gtk/gtkbuilder/window_details.ui.h:22
+msgid "Gooroom Package Analysis Details"
+msgstr ""
+
+#: ../gtk/gtkbuilder/window_main.ui.h:86
+#: ../gtk/gtkbuilder/window_details.ui.h:23
+msgid "Analysis"
 msgstr ""
 
 #: ../gtk/gtkbuilder/window_about.ui.h:4
@@ -3497,14 +3530,14 @@ msgstr ""
 msgid "Package is supported"
 msgstr ""
 
-#: ../gtk/rgterminstallprogress.cc:142
+#: ../gtk/rgterminstallprogress.cc:146
 msgid "<i>Running...</i>"
 msgstr ""
 
-#: ../gtk/rgterminstallprogress.cc:172
+#: ../gtk/rgterminstallprogress.cc:176
 msgid "<i>Finished</i>"
 msgstr ""
 
-#: ../gtk/rgterminstallprogress.cc:183
+#: ../gtk/rgterminstallprogress.cc:187
 msgid "<i>Can't close while running</i>"
 msgstr ""
