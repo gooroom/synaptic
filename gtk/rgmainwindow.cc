@@ -848,11 +848,20 @@ RGMainWindow::RGMainWindow(RPackageLister *packLister, string name)
    }
    g_value_unset(&value);
 
+   if ( !pss->getIsOpenDB() )
+   {
+      GtkWidget *notebook = GTK_WIDGET (gtk_builder_get_object (_builder, "notebook_pkginfo"));
+      GtkWidget *page = gtk_notebook_get_nth_page(GTK_NOTEBOOK(notebook), 5);
+      gtk_widget_hide(page);
+   }
+
    xapianDoIndexUpdate(this);
 
    // apply the proxy settings
    RGPreferencesWindow::applyProxySettings();
 }
+
+RGooroomPss *RGMainWindow::pss = RGooroomPss::getInstance();
 
 #ifdef WITH_EPT
 gboolean RGMainWindow::xapianDoIndexUpdate(void *data)

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: synaptic\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-08-31 17:17+0900\n"
-"PO-Revision-Date: 2017-09-05 16:34+0900\n"
+"PO-Revision-Date: 2017-09-25 14:59+0900\n"
 "Last-Translator: sungho.kang <shkang@gooroom.kr>\n"
 "Language-Team: Gooroom <devel-os@gooroom.kr>\n"
 "Language: ko\n"
@@ -654,11 +654,11 @@ msgstr "더 이상 사용하지 않음"
 
 #: ../common/rpackage.h:61
 msgid "Breaks"
-msgstr ""
+msgstr "망가짐"
 
 #: ../common/rpackage.h:62
 msgid "Enhances"
-msgstr ""
+msgstr "향상"
 
 #. make sure this is always the last member
 #: ../common/rpackage.h:70
@@ -804,7 +804,7 @@ msgstr "간단히 보기"
 
 #: ../common/rpackagefilter.cc:67
 msgid "File"
-msgstr ""
+msgstr "파일"
 
 #: ../common/rpackagefilter.cc:770
 #, c-format
@@ -999,7 +999,7 @@ msgstr "설치함 (자동 지우기)"
 
 #: ../common/rpackageview.cc:158
 msgid "Installed (manual)"
-msgstr ""
+msgstr "설치함 (수동)"
 
 #: ../common/rpackageview.cc:164
 msgid "Broken dependencies"
@@ -1402,7 +1402,7 @@ msgstr "다운로드 크기"
 
 #: ../gtk/rgpreferenceswindow.cc:53 ../gtk/rgpkgtreeview.cc:246
 msgid "CVE Score"
-msgstr ""
+msgstr "CVE 점수"
 
 #: ../gtk/rgpreferenceswindow.cc:59
 msgid "Keep Configuration"
@@ -1504,7 +1504,7 @@ msgstr "다운로드 속도: %s/s - %s 남음"
 
 #: ../gtk/rgfetchprogress.cc:356
 msgid "Download rate: ..."
-msgstr ""
+msgstr "다운로드 속도: ..."
 
 #: ../gtk/rgfetchprogress.cc:358
 #, c-format
@@ -1604,7 +1604,7 @@ msgstr "해당 표현식을 찾았습니다. 왼쪽 목록에서 해당하는 �
 #: ../gtk/gtkbuilder/window_logview.ui.h:2
 #: ../gtk/gtkbuilder/dialog_task_descr.ui.h:1
 msgid "_Close"
-msgstr ""
+msgstr "닫기(_C)"
 
 #: ../gtk/rgpkgdetails.cc:233
 #, c-format
@@ -1630,7 +1630,7 @@ msgstr "홈페이지 방문"
 #: ../gtk/rgpkgdetails.cc:347
 #, c-format
 msgid "Visit %s"
-msgstr ""
+msgstr "%s 방문"
 
 #. TRANSLATORS: this the format of the available versions in
 #. the "Properties/Available versions" window
@@ -1687,11 +1687,11 @@ msgstr ""
 
 #: ../gtk/rgmainwindow.cc:898
 msgid "Rebuilding search index"
-msgstr ""
+msgstr "검색 인덱스를 다시 만드는 중"
 
 #: ../gtk/rgmainwindow.cc:920 ../gtk/gtkbuilder/window_main.ui.h:57
 msgid "Quick filter"
-msgstr ""
+msgstr "빠른 필터"
 
 #: ../gtk/rgmainwindow.cc:1185
 msgid ""
@@ -1711,11 +1711,11 @@ msgstr "표시한 변경 사항 모두 적용"
 
 #: ../gtk/rgmainwindow.cc:1199
 msgid "View package properties"
-msgstr ""
+msgstr "패키지 속성 보기"
 
 #: ../gtk/rgmainwindow.cc:1203
 msgid "Search for packages"
-msgstr ""
+msgstr "패키지 검색"
 
 #: ../gtk/rgmainwindow.cc:1408
 msgid "Unmark"
@@ -1838,13 +1838,12 @@ msgstr "변경 사항 열기"
 #: ../gtk/gtkbuilder/dialog_authentication.ui.h:2
 #: ../gtk/gtkbuilder/dialog_disc_label.ui.h:1
 #: ../gtk/gtkbuilder/dialog_new_repositroy.ui.h:6
-#, fuzzy
 msgid "_Cancel"
-msgstr "취소"
+msgstr "취소(_C)"
 
 #: ../gtk/rgmainwindow.cc:2029 ../gtk/rgmainwindow.cc:3408
 msgid "_Open"
-msgstr ""
+msgstr "열기(_O)"
 
 #: ../gtk/rgmainwindow.cc:2076 ../gtk/rgmainwindow.cc:2673
 #: ../gtk/rgmainwindow.cc:2855 ../gtk/rgmainwindow.cc:3040
@@ -1858,7 +1857,7 @@ msgstr "변경 사항 저장"
 
 #: ../gtk/rgmainwindow.cc:2099 ../gtk/rgmainwindow.cc:3381
 msgid "_Save"
-msgstr ""
+msgstr "저장(_S)"
 
 #: ../gtk/rgmainwindow.cc:2102
 msgid "Save full state, not only changes"
@@ -2120,7 +2119,7 @@ msgstr "<b>%s</b> (<i>%s</i> 버전) 패키지를 다시 설치합니다\n"
 
 #: ../gtk/rgsummarywindow.cc:320
 msgid "_Hide Details"
-msgstr ""
+msgstr "간단히(_H)"
 
 #: ../gtk/rgsummarywindow.cc:324 ../gtk/gtkbuilder/window_summary.ui.h:9
 msgid "_Show Details"
@@ -2207,7 +2206,7 @@ msgstr ""
 
 #: ../gtk/rguserdialog.cc:79
 msgid "An error occurred"
-msgstr ""
+msgstr "오류가 발생했습니다"
 
 #: ../gtk/rguserdialog.cc:80
 msgid "The following details are provided:"
@@ -2416,9 +2415,8 @@ msgid "_Settings"
 msgstr "설정(_S)"
 
 #: ../gtk/gtkbuilder/window_main.ui.h:38
-#, fuzzy
 msgid "_Preferences"
-msgstr "기본 설정"
+msgstr "기본 설정(_P)"
 
 #: ../gtk/gtkbuilder/window_main.ui.h:39
 msgid "_Repositories"
@@ -2546,7 +2544,7 @@ msgstr "<b>태그:</b>"
 #: ../gtk/gtkbuilder/window_main.ui.h:72
 #: ../gtk/gtkbuilder/window_details.ui.h:8
 msgid "<b>Source:</b>"
-msgstr ""
+msgstr "<b>소스:</b>"
 
 #: ../gtk/gtkbuilder/window_main.ui.h:73
 #: ../gtk/gtkbuilder/window_details.ui.h:9
@@ -2752,7 +2750,7 @@ msgstr "<b>모양</b>"
 
 #: ../gtk/gtkbuilder/window_preferences.ui.h:4
 msgid "Show package properties in the main window"
-msgstr ""
+msgstr "메인 창에 패키지 속성 표시"
 
 #: ../gtk/gtkbuilder/window_preferences.ui.h:5
 msgid "<b>Marking Changes</b>"
@@ -2772,7 +2770,7 @@ msgstr "상태 아이콘을 클릭하면 가장 적합한 명령을 표시"
 
 #: ../gtk/gtkbuilder/window_preferences.ui.h:9
 msgid "Removal of packages:"
-msgstr ""
+msgstr "패키지 제거:"
 
 #: ../gtk/gtkbuilder/window_preferences.ui.h:10
 msgid "System upgrade:"
@@ -3043,9 +3041,8 @@ msgstr "다음에 들어 있는 버전 우선: "
 #: ../gtk/gtkbuilder/window_preferences.ui.h:75
 #: ../gtk/gtkbuilder/window_setopt.ui.h:2
 #: ../gtk/gtkbuilder/window_summary.ui.h:3
-#, fuzzy
 msgid "_Apply"
-msgstr "적용"
+msgstr "적용(_A)"
 
 #: ../gtk/gtkbuilder/window_preferences.ui.h:77
 #: ../gtk/gtkbuilder/window_disc_name.ui.h:5
@@ -3053,9 +3050,8 @@ msgstr "적용"
 #: ../gtk/gtkbuilder/window_repositories.ui.h:11
 #: ../gtk/gtkbuilder/window_tasks.ui.h:6
 #: ../gtk/gtkbuilder/dialog_authentication.ui.h:3
-#, fuzzy
 msgid "_OK"
-msgstr "확인"
+msgstr "확인(_O)"
 
 #: ../gtk/gtkbuilder/window_disc_name.ui.h:1
 msgid ""
@@ -3115,7 +3111,7 @@ msgstr "<b>요약</b>"
 
 #: ../gtk/gtkbuilder/window_summary.ui.h:11
 msgid "_Download package files only"
-msgstr "패키지 서명 확인(_V)"
+msgstr "패키지 파일만 다운로드(_D)"
 
 #: ../gtk/gtkbuilder/window_summary.ui.h:12
 msgid "The package files will be downloaded, but not installed"
@@ -3123,7 +3119,7 @@ msgstr "패키지 파일을 다운로드하지만, 설치하지 않습니다"
 
 #: ../gtk/gtkbuilder/window_summary.ui.h:13
 msgid "_Verify package signatures"
-msgstr ""
+msgstr "패키지 서명 확인(_V)"
 
 #: ../gtk/gtkbuilder/window_summary.ui.h:14
 msgid ""
@@ -3136,12 +3132,12 @@ msgstr ""
 #: ../gtk/gtkbuilder/window_filters.ui.h:5
 #: ../gtk/gtkbuilder/window_repositories.ui.h:8
 msgid "_New"
-msgstr ""
+msgstr "추가(_N)"
 
 #: ../gtk/gtkbuilder/window_filters.ui.h:6
 #: ../gtk/gtkbuilder/window_repositories.ui.h:9
 msgid "_Delete"
-msgstr ""
+msgstr "삭제(_D)"
 
 #. TRANSLATORS: this is a label embedded in the "Status" notebook tab, so it describes the "Current [status]"
 #: ../gtk/gtkbuilder/window_filters.ui.h:8
@@ -3273,7 +3269,7 @@ msgstr ""
 
 #: ../gtk/gtkbuilder/window_filters.ui.h:48
 msgid "_Select All"
-msgstr ""
+msgstr "모두 선택(_S)"
 
 #: ../gtk/gtkbuilder/window_filters.ui.h:49
 msgid "_Deselect All"
@@ -3317,12 +3313,11 @@ msgstr "태그"
 
 #: ../gtk/gtkbuilder/window_repositories.ui.h:2
 msgid "_Up"
-msgstr ""
+msgstr "위로(_U)"
 
 #: ../gtk/gtkbuilder/window_repositories.ui.h:3
-#, fuzzy
 msgid "_Down"
-msgstr "다운로드"
+msgstr "아래로(_D)"
 
 #: ../gtk/gtkbuilder/window_repositories.ui.h:4
 msgid "URI:"
@@ -3413,6 +3408,8 @@ msgid ""
 "<b>Note:</b> Changes are not applied instantly. At first you have to mark "
 "all changes and then apply them."
 msgstr ""
+"<b>주의:</b> 바뀐 내용은 바로 적용되지 않습니다. 일단 모든 변경 내용을 표시"
+"한 후에 이를 적용해야 합니다."
 
 #: ../gtk/gtkbuilder/dialog_welcome.ui.h:7
 msgid ""
@@ -3437,7 +3434,7 @@ msgstr "상태 아이콘을 클릭하면 명령이 들어 있는 메뉴를 엽�
 
 #: ../gtk/gtkbuilder/dialog_welcome.ui.h:12
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: ../gtk/gtkbuilder/dialog_unmet.ui.h:2
 msgid ""
@@ -3519,9 +3516,8 @@ msgid "History of installed, upgraded and removed software packages."
 msgstr "소프트웨어 패키지를 설치하고, 업그레이드하고, 지운 기록."
 
 #: ../gtk/gtkbuilder/window_logview.ui.h:4
-#, fuzzy
 msgid "_Find"
-msgstr "찾기"
+msgstr "찾기(_F)"
 
 #: ../gtk/gtkbuilder/dialog_quit.ui.h:3
 msgid ""
@@ -3557,11 +3553,11 @@ msgstr "버전 강제:"
 
 #: ../gtk/gtkbuilder/dialog_upgrade.ui.h:2
 msgid "_Default Upgrade"
-msgstr ""
+msgstr "기본 업그레이드(_D)"
 
 #: ../gtk/gtkbuilder/dialog_upgrade.ui.h:3
 msgid "_Smart Upgrade"
-msgstr ""
+msgstr "똑똑한 업그레이드(_S)"
 
 #: ../gtk/gtkbuilder/dialog_upgrade.ui.h:4
 msgid ""
@@ -3662,7 +3658,7 @@ msgstr "소프트웨어 패키지를 설치, 지우기, 업그레이드"
 
 #: ../data/com.ubuntu.pkexec.synaptic.policy.in.h:1
 msgid "Authentication is required to run the Synaptic Package Manager"
-msgstr ""
+msgstr "시냅틱 패키지 관리자를 실행하려면 인증이 필요합니다"
 
 #: ../gtk/rgfiltermanager.h:62
 msgid "Includes"
