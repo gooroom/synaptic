@@ -70,7 +70,7 @@ msgstr "패키지 소스코드 라인수"
 msgid "cyclomatic_complexity"
 msgstr "패키지 소스코드 순환복잡도"
 
-msgid "num_of_commiters"
+msgid "num_of_committers"
 msgstr "개발자(Committer) 수"
 
 msgid "last_commit_log"
