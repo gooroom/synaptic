@@ -19,6 +19,75 @@ msgstr ""
 "X-Launchpad-Export-Date: 2013-04-19 04:32+0000\n"
 "X-Generator: Poedit 1.8.11\n"
 
+msgid "package_name"
+msgstr "패키지"
+
+msgid "package_version"
+msgstr "버전"
+
+msgid "architecture"
+msgstr "아키텍처"
+
+msgid "source"
+msgstr "소스 패키지"
+
+msgid "source_version"
+msgstr "소스 버전"
+
+msgid "cve_score"
+msgstr "CVE 분석 점수"
+
+msgid "total_cvss"
+msgstr "CVSS 합계"
+
+msgid "num_of_depnd_pkg"
+msgstr "의존성 패키지 개수"
+
+msgid "sum_of_depnd_pkg_cve_score"
+msgstr "의존성 패키지 CVE 점수"
+
+msgid "num_of_exec_files"
+msgstr "포함된 실행파일 개수"
+
+msgid "exec_files_size"
+msgstr "포함된 실행파일 크기"
+
+msgid "num_of_elf_files"
+msgstr "포함된 ELF 파일 개수"
+
+msgid "elf_files_size"
+msgstr "포함된 ELF 파일 크기"
+
+msgid "num_of_uid_guid_files"
+msgstr "포함된 SETUID, SETGID 파일 개수"
+
+msgid "uid_guid_files_size"
+msgstr "포함된 SETUID, SETGID 파일 크기"
+
+msgid "source_lines_of_code"
+msgstr "패키지 소스코드 라인수"
+
+msgid "cyclomatic_complexity"
+msgstr "패키지 소스코드 순환복잡도"
+
+msgid "num_of_commiters"
+msgstr "개발자(Committer) 수"
+
+msgid "last_commit_log"
+msgstr "마지막 커밋(Commit) 로그"
+
+msgid "one_month"
+msgstr "최근 1개월간 커밋 개수"
+
+msgid "three_month"
+msgstr "최근 3개월간 커밋 개수"
+
+msgid "six_month"
+msgstr "최근 6개월간 커밋 개수"
+
+msgid "one_year"
+msgstr "최근 1년간 커밋 개수"
+
 #. TRANSLATORS: Alias for the Debian package section "admin"
 #: ../common/sections_trans.cc:12
 msgid "System Administration"
@@ -1402,7 +1471,7 @@ msgstr "다운로드 크기"
 
 #: ../gtk/rgpreferenceswindow.cc:53 ../gtk/rgpkgtreeview.cc:246
 msgid "CVE Score"
-msgstr "CVE 점수"
+msgstr "CVE 분석 점수"
 
 #: ../gtk/rgpreferenceswindow.cc:59
 msgid "Keep Configuration"

@@ -5,6 +5,7 @@
 #include <fstream>
 #include <sys/stat.h>
 #include "INIReader.h"
+#include "sections_trans.h"
 
 using namespace std;
 
@@ -130,7 +131,7 @@ RGooroomPss::getAllInfo(const char *pkg)
       {
          for ( int i = 0; i < ctotal; i++ )
          {
-            dataStr = (char*)sqlite3_column_name(statement, i);
+            dataStr = (_((char*)sqlite3_column_name(statement, i)));
             dataStrings.push_back(dataStr);
             dataStr = ((char*)sqlite3_column_text(statement, i) ? (char*)sqlite3_column_text(statement, i) : "");
             dataStrings.push_back(dataStr);
