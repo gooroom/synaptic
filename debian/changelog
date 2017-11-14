@@ -1,3 +1,18 @@
+synaptic (0.84.2+grm1u1) unstable; urgency=medium
+
+  [ sungho.kang ]
+  * [4a0c7954] Added showing gooroom pss information
+  * [b9cdcf16] Change ini parser Add INIReader.h and copyright
+  * [4208ef12] Fix bugs
+  * [28c5a1c4] Update ko.po Modify copyright
+  * [f1f1ada9] Update ko.po(95%) synchronized tab and database.
+  * [db26c731] update package analysis l10n
+  * [cf7df74c] fixed typo
+
+  [ Gooroom Autobuilder ]
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Tue, 14 Nov 2017 14:13:29 +0900
+
 synaptic (0.84.2) unstable; urgency=medium
 
   [ Simon McVittie ]
