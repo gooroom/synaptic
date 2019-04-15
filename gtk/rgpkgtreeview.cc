@@ -235,24 +235,6 @@ void setupTreeView(GtkWidget *treeview)
       all_columns.push_back(std::pair<int, GtkTreeViewColumn *>(pos, column));
       gtk_tree_view_column_set_resizable(column, TRUE);
    }
-   // cve score
-   pos = _config->FindI("Synaptic::cveScoreColumnPos", 9);
-   visible = _config->FindI("Synaptic::cveScoreColumnVisible", false);
-   if (visible) {
-      renderer = gtk_cell_renderer_text_new();
-      gtk_cell_renderer_text_set_fixed_height_from_font(GTK_CELL_RENDERER_TEXT
-                                                        (renderer), 1);
-      column =
-         gtk_tree_view_column_new_with_attributes(_("CVE Score"), renderer,
-                                                  "text", CVE_SCORE_COLUMN,
-                                                  "background-rgba",
-                                                  COLOR_COLUMN, NULL);
-      gtk_tree_view_column_set_sizing(column, GTK_TREE_VIEW_COLUMN_FIXED);
-      gtk_tree_view_column_set_fixed_width(column, 80);
-      //gtk_tree_view_insert_column (GTK_TREE_VIEW (treeview), column, pos);
-      all_columns.push_back(std::pair<int, GtkTreeViewColumn *>(pos, column));
-      gtk_tree_view_column_set_resizable(column, TRUE);
-   }
    // now sort and insert in order
    sort(all_columns.begin(), all_columns.end(), mysort());
    for (unsigned int i = 0; i < all_columns.size(); i++) {

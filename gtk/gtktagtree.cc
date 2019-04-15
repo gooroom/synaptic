@@ -418,11 +418,6 @@ gtk_tag_tree_get_value(GtkTreeModel *tree_model,
          str = utf8(pkg->summary());
          g_value_set_string(value, str);
          break;
-      case CVE_SCORE_COLUMN:
-         if (pkg == NULL)
-            return;
-         str = utf8(pkg->cveScore());
-         g_value_set_string(value, str);
       case PKG_COLUMN:
          if (pkg == NULL)
             return;

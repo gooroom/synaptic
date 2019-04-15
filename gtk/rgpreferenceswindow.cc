@@ -45,15 +45,15 @@ enum { FONT_DEFAULT, FONT_TERMINAL };
 
 const char * RGPreferencesWindow::column_names[] = 
    {"status", "supported", "name", "section", "component", "instVer", 
-    "availVer", "instSize", "downloadSize", "descr", "cveScore", NULL };
+    "availVer", "instSize", "downloadSize", "descr", NULL };
 
 const char *RGPreferencesWindow::column_visible_names[] = 
    {_("Status"), _("Supported"), _("Package Name"), _("Section"),
     _("Component"), _("Installed Version"), _("Latest Version"), 
-    _("Size"), _("Download Size"),_("Description"), _("CVE Score"), NULL };
+    _("Size"), _("Download Size"),_("Description"), NULL };
 
 const gboolean RGPreferencesWindow::column_visible_defaults[] = 
-   { TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, TRUE, FALSE, TRUE, FALSE }; 
+   { TRUE, TRUE, TRUE, FALSE, FALSE, TRUE, TRUE, TRUE, FALSE, TRUE }; 
 
 const char *RGPreferencesWindow::removal_actions[] =
    { N_("Keep Configuration"), N_("Completely"), NULL };
@@ -204,14 +204,18 @@ void RGPreferencesWindow::saveGeneral()
                                     (_mainWin->getGtkBuilder(),
                                      "notebook_pkginfo"));
    gtk_notebook_set_show_tabs(GTK_NOTEBOOK(notebook), newval);
-   GtkWidget *box = GTK_WIDGET(gtk_builder_get_object
-                               (_mainWin->getGtkBuilder(),
-                                "vbox_pkgdescr"));
+
    if(newval) {
-      gtk_container_set_border_width(GTK_CONTAINER(box), 6);
+      GtkWidget *widget = GTK_WIDGET(gtk_builder_get_object
+                                     (_mainWin->getGtkBuilder(), "button_details"));
+      gtk_widget_hide(widget);
+      gtk_widget_set_margin_top(notebook, 6);
    } else {
+      GtkWidget *widget = GTK_WIDGET(gtk_builder_get_object
+                                     (_mainWin->getGtkBuilder(), "button_details"));
+      gtk_widget_show(widget);
       gtk_notebook_set_current_page(GTK_NOTEBOOK(notebook), 0);
-      gtk_container_set_border_width(GTK_CONTAINER(box), 0);
+      gtk_widget_set_margin_top(notebook, 0);
    }
 
    // Ask to confirm changes also affecting other packages

@@ -37,7 +37,6 @@
 using namespace std;
 
 class RGGtkBuilderWindow:public RGWindow {
-   enum {TREE_NAME_COLUMN, TREE_VALUE_COLUMN};
  protected:
    GtkBuilder *_builder;
    GdkCursor *_busyCursor;
@@ -61,7 +60,6 @@ class RGGtkBuilderWindow:public RGWindow {
    bool setPixmap(const char *widget_name, GdkPixbuf *value);
    bool setTreeList(const char *widget_name, vector<string> values,
 		    bool useMarkup=false);
-   bool setAnalysisTreeList(const char *widget_name, vector<string> values);
 
    GtkBuilder* getGtkBuilder() {return _builder;};
 };

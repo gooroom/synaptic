@@ -40,7 +40,6 @@ using namespace std;
 #include "rinstallprogress.h"
 #include "rggtkbuilderwindow.h"
 #include "rgiconlegend.h"
-#include "rgooroompss.h"
 #include "gtkpkglist.h"
 #include "rgpkgdetails.h"
 #include "rglogview.h"
@@ -82,8 +81,6 @@ class RGMainWindow : public RGGtkBuilderWindow, public RPackageObserver {
    bool _unsavedChanges;
    bool _blockActions;        // block signals from the action and hold buttons
    int _interfaceLocked;      
-
-   static RGooroomPss *pss;
 
    // the central class that has all the package information
    RPackageLister *_lister;

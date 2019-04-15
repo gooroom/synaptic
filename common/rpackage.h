@@ -1,17 +1,17 @@
 /* rpackage.h - wrapper for accessing package information
- * 
- * Copyright (c) 2000, 2001 Conectiva S/A 
+ *
+ * Copyright (c) 2000, 2001 Conectiva S/A
  *               2002 Michael Vogt <mvo@debian.org>
- * 
+ *
  * Author: Alfredo K. Kojima <kojima@conectiva.com.br>
  *         Michael Vogt <mvo@debian.org>
- * 
+ *
  * Portions Taken from Gnome APT
  *   Copyright (C) 1998 Havoc Pennington <hp@pobox.com>
- * 
  *
- * This program is free software; you can redistribute it and/or 
- * modify it under the terms of the GNU General Public License as 
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
  * published by the Free Software Foundation; either version 2 of the
  * License, or (at your option) any later version.
  *
@@ -36,7 +36,6 @@
 #include <apt-pkg/pkgcache.h>
 #include <apt-pkg/acquire.h>
 #include "rconfiguration.h"
-#include "rgooroompss.h"
 #include "i18n.h"
 
 using namespace std;
@@ -47,9 +46,9 @@ class pkgRecords;
 
 enum { NO_PARSER, DEB_PARSER, STRIP_WS_PARSER, RPM_PARSER };
 
-// taken from apt (pkgcache.cc) to make our life easier 
+// taken from apt (pkgcache.cc) to make our life easier
 // (and added "RDepends" as last element)
-static const char *DepTypeStr[] = 
+static const char *DepTypeStr[] =
    {"",
     _("Depends"),
     _("PreDepends"),
@@ -57,11 +56,11 @@ static const char *DepTypeStr[] =
     _("Recommends"),
     _("Conflicts"),
     _("Replaces"),
-    _("Obsoletes"), 
+    _("Obsoletes"),
     _("Breaks"),
     _("Enhances"),
     /* padding */
-    "", 
+    "",
     "",
     "",
     "",
@@ -73,9 +72,9 @@ static const char *DepTypeStr[] =
 typedef struct  {
    pkgCache::Dep::DepType type; // type as enum
    const char* name;            // target pkg name
-   const char* version;         // target version  
+   const char* version;         // target version
    const char* versionComp;     // target version compare type ( << , > etc)
-   bool isSatisfied;            // dependecy is satified 
+   bool isSatisfied;            // dependecy is satified
    bool isVirtual;              // package is virtual
    bool isOr;                   // or dependency (with next pkg)
 } DepInformation;
@@ -83,7 +82,6 @@ typedef struct  {
 
 class RPackage {
 
-   static RGooroomPss *pss;
  public:
    RPackageLister *_lister;
 
@@ -100,7 +98,7 @@ class RPackage {
    bool _notify;
 
    // Virtual pkgs provided by this one.
-   // FIXME: broken right now 
+   // FIXME: broken right now
    bool isShallowDependency(RPackage *pkg);
    int _boolFlags;
 
@@ -140,7 +138,7 @@ class RPackage {
       ISecurity
    };
 
-   pkgCache::PkgIterator *package() { return _package; };
+   pkgCache::PkgIterator *package() { return _package; }
 
    const char *name();
 
@@ -157,9 +155,9 @@ class RPackage {
    // (note that packages installed are never considered a duplicate
    bool isMultiArchDuplicate();
 
-   // get changelog file from the debian server 
+   // get changelog file from the debian server
    string getChangelogFile(pkgAcquire *fetcher);
-   // get screenshot file from the debian server 
+   // get screenshot file from the debian server
    string getScreenshotFile(pkgAcquire *fetcher, bool thumb = true);
 
    vector<string> provides();
@@ -171,7 +169,7 @@ class RPackage {
    vector<string> getCandidateOriginSiteUrls();
    // get origin "archive" release header (e.g. karmic, karmic-updates)
    vector<string> getCandidateOriginSuites();
-   // get origin "origin" release header (e.g. Ubuntu, 
+   // get origin "origin" release header (e.g. Ubuntu,
    string getCandidateOriginStr();
 
    // get the release file for the givel origin label string
@@ -179,13 +177,13 @@ class RPackage {
 
    // get installed component (like main, contrib, non-free)
    string component();
-   
+
    // get label of download site
    string label();
 
    // get origin (Origin tag from the release file)
    string origin();
-   
+
    const char *maintainer();
    const char *homepage();
    const char *vendor();
@@ -201,9 +199,6 @@ class RPackage {
 
    // sourcepkg
    const char *srcPackage();
-
-  // pss score
-  string cveScore();
 
    // relative to version that would be installed
    const char *availableVersion();
@@ -234,10 +229,10 @@ class RPackage {
 
    void setNew(bool flag = true) {
       _boolFlags = flag ? (_boolFlags | FNew) : (_boolFlags & ~FNew);
-   };
+   }
    void setOrphaned(bool flag = true) {
       _boolFlags = flag ? (_boolFlags | FOrphaned) : (_boolFlags & ~FOrphaned);
-   };
+   }
 
    // set/unset the auto-installed flag
    void setAuto(bool flag = true);
@@ -249,7 +244,7 @@ class RPackage {
 
    // mainpulate the candiate version
    bool setVersion(string verTag);
-   void unsetVersion(); 
+   void unsetVersion();
    string showWhyInstBroken();
 
    RPackage(RPackageLister *lister, pkgDepCache *depcache,
