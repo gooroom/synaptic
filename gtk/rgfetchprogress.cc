@@ -185,6 +185,11 @@ void RGFetchProgress::cursorChanged(GtkTreeView *self, void *data)
    me->_cursorDirty=true;
 }
 
+void RGFetchProgress::setTitleOnly(string text)
+{
+   gtk_window_set_title(GTK_WINDOW(_win), text.c_str());
+}
+
 void RGFetchProgress::setDescription(string mainText, string secondText)
 {
    gchar *str;

@@ -136,10 +136,12 @@ void RGPkgDetailsWindow::cbShowBigScreenshot(GtkWidget *box,
 void RGPkgDetailsWindow::doShowBigScreenshot(RPackage *pkg)
 {
    RGFetchProgress *status = new RGFetchProgress(NULL);;
+   status->setTitleOnly(_("Synaptic"));
    pkgAcquire fetcher(status);
    string filename = pkg->getScreenshotFile(&fetcher, false);
    GtkWidget *img = gtk_image_new_from_file(filename.c_str());
    GtkWidget *win = gtk_dialog_new();
+   gtk_window_set_title(GTK_WINDOW(win), _("Synaptic"));
    gtk_window_set_default_size(GTK_WINDOW(win), 500, 400);
    gtk_dialog_add_button(GTK_DIALOG(win), _("_Close"), GTK_RESPONSE_CLOSE);
    gtk_widget_show(img);
