@@ -136,7 +136,6 @@ void RGPkgDetailsWindow::cbShowBigScreenshot(GtkWidget *box,
 void RGPkgDetailsWindow::doShowBigScreenshot(RPackage *pkg)
 {
    RGFetchProgress *status = new RGFetchProgress(NULL);;
-   status->setTitleOnly(_("Synaptic"));
    pkgAcquire fetcher(status);
    string filename = pkg->getScreenshotFile(&fetcher, false);
    GtkWidget *img = gtk_image_new_from_file(filename.c_str());
