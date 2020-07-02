@@ -3629,7 +3629,7 @@ msgstr "소프트웨어 패키지를 설치, 지우기, 업그레이드"
 
 #: ../data/com.ubuntu.pkexec.synaptic.policy.in.h:1
 msgid "Authentication is required to run the Synaptic Package Manager"
-msgstr ""
+msgstr "시냅틱 패키지 관리자를 실행하려면 인증이 필요합니다."
 
 #: ../gtk/rgfiltermanager.h:62
 msgid "Includes"
