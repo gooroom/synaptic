@@ -1,3 +1,17 @@
+synaptic (0.84.6+grm2u1) unstable; urgency=medium
+
+  [ HaeRyong Jeong ]
+  * [0cb54db7] Updated translation
+  * [38de3acd] [Bug:2456] Update korean translation
+
+  [ boyeon.choi ]
+  * [a5572fa2] [Bug:2456] Fixed dialog title
+  * [7296ced3] [Bug:2476]Modified the headerbar of dialog_quit to be translatable
+
+  [ Gooroom Autobuilder ]
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Tue, 07 Jul 2020 16:31:39 +0900
+
 synaptic (0.84.6) unstable; urgency=medium
 
   [ sajolida ]
