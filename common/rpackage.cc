@@ -54,7 +54,6 @@
 #include <apt-pkg/configuration.h>
 #include <apt-pkg/tagfile.h>
 #include <apt-pkg/policy.h>
-#include <apt-pkg/sptr.h>
 #include <apt-pkg/strutl.h>
 #include <apt-pkg/cacheiterators.h>
 #include <apt-pkg/pkgcache.h>
@@ -108,11 +107,14 @@ void RPackage::addVirtualPackage(pkgCache::PkgIterator dep)
 
 const char *RPackage::section()
 {
-   const char *s = _package->Section();
-   if (s != NULL)
-      return s;
-   else
-      return _("Unknown");
+   pkgCache::VerIterator ver = (*_depcache)[*_package].CandidateVerIter(*_depcache);
+   if (!ver.end()) {
+      const char *s = ver.Section();
+      if (s != NULL)
+         return s;
+   }
+
+   return _("Unknown");
 }
 
 const char *RPackage::srcPackage()
@@ -202,6 +204,15 @@ const char *RPackage::availableVersion()
       return NULL;
    return State.CandidateVerIter(*_depcache).VerStr();
 }
+
+pkgCache::VerIterator RPackage::availableVersionIter()
+{
+   pkgDepCache::StateCache & State = (*_depcache)[*_package];
+//    if (State.CandidateVer == 0)
+//       return NULL;
+   return State.CandidateVerIter(*_depcache);
+}
+
 
 const char *RPackage::priority()
 {
@@ -916,7 +927,6 @@ void RPackage::setRemove(bool purge)
    Fix.Protect(*_package);
    Fix.Remove(*_package);
 
-   Fix.InstallProtect();
    Fix.Resolve(true);
 
    _depcache->SetReInstall(*_package, false);
@@ -955,55 +965,14 @@ string RPackage::getScreenshotFile(pkgAcquire *fetcher, bool thumb)
    return filename;
 }
 
-string RPackage::getChangelogURI()
-{
-   char uri[512];
-   //FIXME: get the supportedOrigins from pkgStatus
-   if(origin() == "Debian") {
-      string prefix;
-      string srcpkg = srcPackage();
-
-      string src_section=section();
-      if(src_section.find('/')!=src_section.npos)
-         src_section=string(src_section, 0, src_section.find('/'));
-      else
-         src_section="main";
-
-      prefix+=srcpkg[0];
-      if(srcpkg.size()>3 && srcpkg[0]=='l' && srcpkg[1]=='i' && srcpkg[2]=='b')
-         prefix=std::string("lib")+srcpkg[3];
-
-      string verstr;
-      if(availableVersion() != NULL)
-         verstr = availableVersion();
-
-      if(verstr.find(':')!=verstr.npos)
-         verstr=string(verstr, verstr.find(':')+1);
-
-      snprintf(uri,512,"http://packages.debian.org/changelogs/pool/%s/%s/%s/%s_%s/changelog",
-                               src_section.c_str(),
-                               prefix.c_str(),
-                               srcpkg.c_str(),
-                               srcpkg.c_str(),
-                               verstr.c_str());
-   } else {
-       string pkgfilename = findTagFromPkgRecord("Filename");
-       pkgfilename = pkgfilename.substr(0, pkgfilename.find_last_of('.')) + ".changelog";
-       vector<string> origin_urls = getCandidateOriginSiteUrls();
-       if (origin_urls.size() > 0)
-          snprintf(uri,512,"http://%s/%s",
-                   origin_urls[0].c_str(),
-                   pkgfilename.c_str());
-   }
-   return string(uri);
-}
-
 string RPackage::getChangelogFile(pkgAcquire *fetcher)
 {
    string descr("Changelog for ");
    descr+=name();
 
-   string uri = getChangelogURI();
+   pkgCache::VerIterator Ver = availableVersionIter();
+   std::string uri = pkgAcqChangelog::URI(Ver);
+   
    // no need to translate this, the changelog is in english anyway
    string filename = RTmpDir()+"/tmp_cl";
 
@@ -1011,6 +980,7 @@ string RPackage::getChangelogFile(pkgAcquire *fetcher)
    //cerr << "**DEBUG** origin: " << origin() << endl;
    //cerr << "**DEBUG** uri: " << uri << endl;
    //cerr << "**DEBUG** filename: " << filename << endl;
+
 
    ofstream out(filename.c_str());
    if(fetcher->Run() == pkgAcquire::Failed) {
@@ -1023,7 +993,10 @@ string RPackage::getChangelogFile(pkgAcquire *fetcher)
       if (filestatus.st_size == 0) {
          out << "This change is not coming from a source that supports changelogs.\n" << endl;
          out << "Failed to fetch the changelog for " << name() << endl;
-         out << "URI was: " << uri << endl;
+         if (uri.empty())
+            out << "URI was empty" << endl;
+         else
+            out << "URI was: " << uri << endl;
       }
    };
    out.close();
@@ -1105,13 +1078,13 @@ void RPackage::setPinned(bool flag)
       stat(File.c_str(), &stat_buf);
       // create a tmp_pin file in the internal dir
       string filename = RStateDir() + "/.tmp_preferences";
-      FILE *out = fopen(filename.c_str(),"w");
-      if (out == NULL)
-         cerr << "error opening tmpfile: " << filename << endl;
+      FileFd out(filename, FileFd::WriteOnly | FileFd::Create | FileFd::Empty);
+      if (!out.IsOpen()) {
+         _error->DumpErrors();
+      }
       FileFd Fd(File, FileFd::ReadOnly);
       pkgTagFile TF(&Fd);
       if (_error->PendingError() == true) {
-         fclose(out);
          return;
       }
       pkgTagSection Tags;
@@ -1123,19 +1096,14 @@ void RPackage::setPinned(bool flag)
                      ("Invalid record in the preferences file, no Package header"));
             return;
          }
-         if (Name != name()) {
-            TFRewriteData tfrd;
-            tfrd.Tag = 0;
-            tfrd.Rewrite = 0;
-            tfrd.NewTag = 0;
-            TFRewrite(out, Tags, TFRewritePackageOrder, &tfrd);
-            fprintf(out, "\n");
-         }
+         if (Name != name())
+            Tags.Write(out, TFRewritePackageOrder, {});
+         out.Write("\n", 1);
       }
-      fflush(out);
+      out.Flush();
       rename(filename.c_str(), File.c_str());
       chmod(File.c_str(), stat_buf.st_mode);
-      fclose(out);
+      out.Close();
    }
 }
 
@@ -1448,7 +1416,11 @@ string RPackage::component()
    string res;
 #ifdef WITH_APT_AUTH
    // the apt-secure patch breaks File.Component
-   const char *s = _package->Section();
+   pkgCache::VerIterator ver = (*_depcache)[*_package].CandidateVerIter(*_depcache);
+   const char *s = NULL;
+   if (!ver.end())
+      s = ver.Section();
+
    if(s == NULL)
       return "";
 

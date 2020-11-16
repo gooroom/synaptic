@@ -83,7 +83,6 @@ class RGFetchProgress : public pkgAcquireStatus, public RGGtkBuilderWindow {
 
    bool Pulse(pkgAcquire * Owner);
 
-   void setTitleOnly(string text);
    // set description of the current task (main and additonal explaination)
    void setDescription(string mainText, string secondText="");
 

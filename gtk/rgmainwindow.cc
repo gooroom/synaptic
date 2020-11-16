@@ -619,7 +619,6 @@ bool RGMainWindow::askStateChange(RPackageLister::pkgState state,
       RGChangesWindow changes(this);
       changes.confirm(_lister, toKeep, toInstall, toReInstall,
 		      toUpgrade, toRemove, toDowngrade, notAuthenticated);
-      changes.setTitle(_("Synaptic"));
       int res = gtk_dialog_run(GTK_DIALOG(changes.window()));
       if( res != GTK_RESPONSE_OK) {
          // canceled operation
@@ -3370,9 +3369,9 @@ void RGMainWindow::cbGenerateDownloadScriptClicked(GtkWidget *self, void *data)
    double sizeChange;
    me->_lister->getStats(installed, broken, toInstall, toRemove, sizeChange);
    if(toInstall== 0) {
-      me->_userDialog->message(_("Nothing to install/upgrade\n\n"
+      me->_userDialog->message("Nothing to install/upgrade\n\n"
 			       "Please select the \"Mark all Upgrades\" "
-			       "button or some packages to install/upgrade."));
+			       "button or some packages to install/upgrade.");
       return;
    }
 

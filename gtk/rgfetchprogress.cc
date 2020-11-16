@@ -185,11 +185,6 @@ void RGFetchProgress::cursorChanged(GtkTreeView *self, void *data)
    me->_cursorDirty=true;
 }
 
-void RGFetchProgress::setTitleOnly(string text)
-{
-   gtk_window_set_title(GTK_WINDOW(_win), text.c_str());
-}
-
 void RGFetchProgress::setDescription(string mainText, string secondText)
 {
    gchar *str;
@@ -329,11 +324,17 @@ bool RGFetchProgress::Pulse(pkgAcquire *Owner)
 
       if (I->CurrentItem == 0)
          continue;
-
+#if APT_PKG_ABI >= 590
+      if (I->CurrentItem->TotalSize > 0)
+         updateStatus(*I->CurrentItem,
+                      long (double (I->CurrentItem->CurrentSize * 100.0) /
+                            double (I->CurrentItem->TotalSize)));
+#else
       if (I->TotalSize > 0)
          updateStatus(*I->CurrentItem,
                       long (double (I->CurrentSize * 100.0) /
                             double (I->TotalSize)));
+#endif
       else
          updateStatus(*I->CurrentItem, 100);
 

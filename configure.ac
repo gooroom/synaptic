@@ -1,7 +1,7 @@
 dnl Process this file with autoconf to produce a configure script.
-AC_INIT(configure.in)
+AC_INIT(synaptic, 0.90.2)
 
-AM_INIT_AUTOMAKE(synaptic, 0.84.6)
+AM_INIT_AUTOMAKE([subdir-objects -Wno-portability])
 AM_CONFIG_HEADER(config.h)
 AM_MAINTAINER_MODE
 
@@ -116,7 +116,7 @@ AM_CONDITIONAL(WITH_LUA, test "$enable_scripts" != "no")
 
 DEB_HDRS=""
 AC_SUBST(DEB_HDRS)
-DEB_LIBS="-lapt-inst"
+AC_CHECK_LIB(apt-inst, main, [DEB_LIBS=-lapt-inst], [DEB_LIBS=])
 AC_SUBST(DEB_LIBS)
 
 dnl Checks for header files.
@@ -214,7 +214,9 @@ AS_IF([test "x$with_apt_multiarch_support" != "xno"],
 	[AC_DEFINE(WITH_APT_MULTIARCH_SUPPORT, 1, [build with multiarch])]
       )
 
-
+AS_IF([dpkg-vendor --derives-from ubuntu],
+	[AC_DEFINE(VENDOR_DERIVES_FROM_UBUNTU, 1, [vendor derives from ubuntu])]
+      )
 AC_OUTPUT([
 tests/Makefile 
 common/Makefile 

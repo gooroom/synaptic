@@ -2,7 +2,7 @@
 
 noinst_LIBRARIES = libsynaptic.a
 
-INCLUDES = -I/usr/include/apt-pkg @RPM_HDRS@ @DEB_HDRS@ \
+AM_CPPFLAGS = -I/usr/include/apt-pkg @RPM_HDRS@ @DEB_HDRS@ \
 	$(LIBEPT_CFLAGS) \
 	-DSYNAPTICLOCALEDIR=\""$(synapticlocaledir)"\" \
 	-DSYNAPTICSTATEDIR=\""$(localstatedir)"\"
@@ -28,8 +28,6 @@ libsynaptic_a_SOURCES =\
 	rpackageview.h\
 	rcdscanner.cc\
 	rcdscanner.h\
-	indexcopy.cc\
-	indexcopy.h\
 	rpmindexcopy.cc \
 	rpmindexcopy.h \
 	raptoptions.cc \
