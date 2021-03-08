@@ -171,10 +171,11 @@ void RGFetchProgress::expanderActivate(GObject    *object,
    RGFetchProgress *me = (RGFetchProgress*)data;
 
    GtkWidget *win = GTK_WIDGET(gtk_builder_get_object(me->_builder, "window_fetch"));
+
    if (gtk_expander_get_expanded (expander)) 
       gtk_window_set_resizable(GTK_WINDOW(win),TRUE);
    else 
-      gtk_window_set_resizable(GTK_WINDOW(win), FALSE);
+	  gtk_window_resize (GTK_WINDOW(win), 450, 1);
 }
 
 
