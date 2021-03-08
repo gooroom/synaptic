@@ -1,39 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.22.1 -->
 <interface>
   <requires lib="gtk+" version="3.0"/>
   <object class="GtkWindow" id="window_fetch">
     <property name="can_focus">False</property>
     <property name="border_width">6</property>
+    <property name="title" translatable="yes">Synaptic</property>
     <property name="modal">True</property>
     <property name="window_position">center-on-parent</property>
     <property name="default_width">450</property>
     <property name="type_hint">dialog</property>
     <child>
+      <placeholder/>
+    </child>
+    <child>
       <object class="GtkBox" id="vbox_fetch">
-        <property name="orientation">vertical</property>
         <property name="visible">True</property>
         <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
         <property name="spacing">6</property>
         <child>
           <object class="GtkBox" id="vbox18">
-            <property name="orientation">vertical</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="border_width">6</property>
+            <property name="orientation">vertical</property>
             <property name="spacing">12</property>
             <child>
               <object class="GtkBox" id="vbox20">
-                <property name="orientation">vertical</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <property name="orientation">vertical</property>
                 <property name="spacing">6</property>
                 <child>
                   <object class="GtkLabel" id="label_description">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="xalign">0</property>
                     <property name="use_markup">True</property>
                     <property name="wrap">True</property>
+                    <property name="xalign">0</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -57,6 +62,8 @@
                   <object class="GtkLabel" id="label_eta">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
+                    <property name="wrap">True</property>
+                    <property name="wrap_mode">word-char</property>
                     <property name="xalign">0</property>
                   </object>
                   <packing>
@@ -79,9 +86,9 @@
                 <property name="spacing">6</property>
                 <child>
                   <object class="GtkBox" id="vbox19">
-                    <property name="orientation">vertical</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
+                    <property name="orientation">vertical</property>
                     <property name="spacing">6</property>
                     <child>
                       <object class="GtkScrolledWindow" id="scrolledwindow7">
@@ -135,7 +142,6 @@
         </child>
         <child>
           <object class="GtkButtonBox" id="hbuttonbox1">
-            <property name="orientation">horizontal</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
