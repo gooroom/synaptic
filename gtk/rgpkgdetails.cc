@@ -185,6 +185,30 @@ void RGPkgDetailsWindow::cbShowChangelog(GtkWidget *button, void *data)
    ShowChangelogDialog(parent, pkg);
 }
 
+void cbButtonLeave(GtkWidget *button, GdkEvent *event, gpointer user_data)
+{
+   GdkCursor *cursor;
+   GdkWindow *window;
+   GdkDisplay *display;
+
+   display = gtk_widget_get_display (button);
+   cursor = gdk_cursor_new_from_name (display ,"text");
+   window = gtk_widget_get_window (GTK_WIDGET(button));
+   gdk_window_set_cursor (window, cursor);
+}
+
+void cbButtonHover(GtkWidget *button,GdkEvent *evet, gpointer user_data)
+{
+   GdkCursor *cursor;
+   GdkWindow *window;
+   GdkDisplay *display;
+
+   display = gtk_widget_get_display (button);
+   cursor = gdk_cursor_new_from_name (display ,"pointer");
+   window = gtk_widget_get_window (GTK_WIDGET(button));
+   gdk_window_set_cursor (window, cursor);
+}
+
 gboolean RGPkgDetailsWindow::cbOpenLink(GtkWidget *label, 
                                         gchar *uri, 
                                         void *data)
@@ -313,7 +337,10 @@ void RGPkgDetailsWindow::fillInValues(RGGtkBuilderWindow *me,
                     G_CALLBACK(cbShowScreenshot), 
                     &si);
    gtk_text_view_add_child_at_anchor(GTK_TEXT_VIEW(textview), button, anchor);
+
    gtk_widget_show(button);
+   g_signal_connect (G_OBJECT(button), "leave-notify-event", G_CALLBACK(cbButtonLeave), NULL);
+   g_signal_connect (G_OBJECT(button), "enter-notify-event", G_CALLBACK(cbButtonHover), NULL);
 
    // add button to get changelog
    gtk_text_buffer_insert(buf, &it, "    ", 1);
@@ -325,6 +352,8 @@ void RGPkgDetailsWindow::fillInValues(RGGtkBuilderWindow *me,
                     pkg);
    gtk_text_view_add_child_at_anchor(GTK_TEXT_VIEW(textview), button, anchor);
    gtk_widget_show(button);
+   g_signal_connect (G_OBJECT(button), "leave-notify-event", G_CALLBACK(cbButtonLeave), NULL);
+   g_signal_connect (G_OBJECT(button), "enter-notify-event", G_CALLBACK(cbButtonHover), NULL);
 
    // add button to open the homepage
    if (strlen(pkg->homepage())) {
