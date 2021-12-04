@@ -1,3 +1,14 @@
+synaptic (0.90.2+grm3u1) unstable; urgency=medium
+
+  [ boyeon.choi ]
+  * [196e8b10] [Bug:3143] Fixed the text of window_fetch.ui was wrapped
+  * [4d7939db] [Bug:3128] Fixed mouse over events in the text view
+
+  [ subin.kim ]
+  * [65b0eeed] [Bug:4110]Updated ko.po file
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Sat, 04 Dec 2021 19:17:45 +0900
+
 synaptic (0.90.2) unstable; urgency=medium
 
   [ Heimen Stoffels ]
