@@ -3432,10 +3432,7 @@ msgid ""
 "of network problems. If available an older version of the failed index will "
 "be used. Otherwise the repository will be ignored. Check your network "
 "connection and ensure the repository address in the preferences is correct."
-msgstr "모든 저장소의 인덱스들을 다운로드 할 수 없습니다"
-"\n"
-"네트워크 문제로 인해 저장소를 더 이상 사용할 수 없거나 연결할 수 없습니다. 사용 가능한 경우 실패한 인덱스의 이전 버전이 사용됩니다. 그렇지 않으면 저장소가 무시됩니다. 네트워크 연결을 확인하고 기본 설정의 저장소
- 주소가 올바른지 확인하십시오."
+msgstr ""
 
 #: ../gtk/gtkbuilder/window_iconlegend.ui.h:1 ../gtk/rgiconlegend.cc:42
 msgid "Icon Legend"
