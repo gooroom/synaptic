@@ -1,3 +1,11 @@
+synaptic (0.90.2+grm3u3) unstable; urgency=medium
+
+  [ subin.kim ]
+  * [f45cfa0c] [Bug:5179,4602] Adjusted error dialog size
+  * [223151e4] Updated ko.po
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Thu, 08 Sep 2022 15:20:12 +0900
+
 synaptic (0.90.2+grm3u2) unstable; urgency=medium
 
   [ subin.kim ]
